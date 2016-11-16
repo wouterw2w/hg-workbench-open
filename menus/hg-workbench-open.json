@@ -1,0 +1,10 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Open in Hg Workbench",
+        "command": "hg-workbench-open:toggle"
+      }
+    ]
+  }
+}
