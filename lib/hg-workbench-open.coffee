@@ -1,6 +1,6 @@
 {CompositeDisposable} = require 'atom'
 exec = require('child_process').exec
-path = require 'path'
+path = require('path')
 
 module.exports =
   subscriptions: null
@@ -16,7 +16,7 @@ module.exports =
   opener: ->
     editor = atom.workspace.getActivePaneItem()
     file = editor?.buffer?.file
-    path = path.dirname(file?.path)
+    pathName = path.dirname(file?.path)
     if editor = atom.workspace.getActiveTextEditor()
-      console.log("Opening " + path + " in TortoiseHg")
-      exec("thgw.exe -R \"" + path + "\"")
+      console.log("Opening " + pathName + " in TortoiseHg")
+      exec("thgw.exe -R \"" + pathName + "\"")
