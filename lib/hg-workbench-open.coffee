@@ -15,8 +15,21 @@ module.exports =
 
   opener: ->
     editor = atom.workspace.getActivePaneItem()
-    file = editor?.buffer?.file
-    pathName = path.dirname(file?.path)
-    if editor = atom.workspace.getActiveTextEditor()
-      console.log("Opening " + pathName + " in TortoiseHg")
-      exec("thgw.exe -R \"" + pathName + "\"")
+    listTree = document.querySelector('.tree-view')
+    selected = listTree.querySelectorAll('.selected > .header > span, .selected > span')
+    if selected.length == 1
+      pieces = selected[0].dataset.path.split(path.sep)
+      name = pieces[pieces.length - 1].replace(".", "-")
+      pieces.splice(pieces.length, 1)
+      pathName = pieces.join(path.sep)
+      extname = path.extname(pathName).trim()
+      if extname == ''
+        console.log("Opening " + pathName + " in TortoiseHg")
+        exec("thgw.exe -R \"" + pathName + "\"")
+      else
+        pieces.splice(pieces.length - 1, 1)
+        pathName = pieces.join(path.sep)
+        console.log("Opening " + pathName + " in TortoiseHg")
+        exec("thgw.exe -R \"" + pathName + "\"")
+    else
+      console.log("Error, no/too many folders selected.")
