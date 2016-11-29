@@ -23,13 +23,10 @@ module.exports =
       pieces.splice(pieces.length, 1)
       pathName = pieces.join(path.sep)
       extname = path.extname(pathName).trim()
-      if extname == ''
-        console.log("Opening " + pathName + " in TortoiseHg")
-        exec("thgw.exe -R \"" + pathName + "\"")
-      else
+      if extname != ''
         pieces.splice(pieces.length - 1, 1)
         pathName = pieces.join(path.sep)
-        console.log("Opening " + pathName + " in TortoiseHg")
-        exec("thgw.exe -R \"" + pathName + "\"")
+      console.log("Opening " + pathName + " in TortoiseHg")
+      exec("thgw.exe -R \"" + pathName + "\"")
     else
       console.log("Error, no/too many folders selected.")
