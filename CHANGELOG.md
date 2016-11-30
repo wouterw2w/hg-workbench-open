@@ -1,3 +1,6 @@
+## 0.2.1 - Build to update Atom listing
+* All this was for is to update the listing on [Atom.io][Atom.io]
+
 ## 0.2.0 - Code changed again
 * Streamlined code because the same code was in 2 places
 * Remove un-necessary `if`/`else` statement and replaced with single `if`
@@ -19,3 +22,5 @@
 
 ## 0.1.0 - First Release
 * Nothing to see here...
+
+[Atom.io]: https://atom.io/packages/hg-workbench-open
