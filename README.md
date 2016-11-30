@@ -4,7 +4,7 @@ Open mercurial repositories in TortoiseHg Workbench.
 
 ## Usage
 
-Right click on a file or folder in the `tree-view` that you want to open in TortoiseHg Workbench, the repository that the falls under will be opened.
+Right click on a file or folder in the `tree-view` that you want to open in TortoiseHg Workbench, the repository that this falls under will be opened.
 
 ## Notes
 
