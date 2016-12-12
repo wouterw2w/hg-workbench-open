@@ -11,4 +11,4 @@ Right click on a file or folder in the `tree-view` that you want to open in Tort
 ## Notes
 
 - Any folder named `node_modules` is ignored.
-- Please report problems to [github issues](https://github.com/pxgamer/hg-workbench-open-package/issues).
+- Please report problems to [github issues](https://github.com/pxgamer/hg-workbench-open/issues).
