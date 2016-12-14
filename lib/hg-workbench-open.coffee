@@ -4,6 +4,14 @@ path = require('path')
 
 module.exports =
   subscriptions: null
+  config: {
+    notify: {
+      title: 'Show notifications',
+      description: 'Enables notifications for when a file has been opened in Hg Workbench.',
+      type: 'boolean',
+      default: 'false'
+    }
+  }
 
   activate: ->
     @subscriptions = new CompositeDisposable
@@ -14,6 +22,7 @@ module.exports =
     @subscriptions.dispose()
 
   opener: ->
+    notify = atom.config.get('hg-workbench-open.notify')
     editor = atom.workspace.getActivePaneItem()
     listTree = document.querySelector('.tree-view')
     selected = listTree.querySelectorAll('.selected > .header > span, .selected > span')
@@ -26,7 +35,9 @@ module.exports =
       if extname != ''
         pieces.splice(pieces.length - 1, 1)
         pathName = pieces.join(path.sep)
-      console.log("Opening " + pathName + " in TortoiseHg")
+      if notify
+        atom.notifications.addSuccess 'Opening ' + pathName + ' in TortoiseHg', { 'dismissable': true }
       exec("thgw.exe -R \"" + pathName + "\"")
     else
-      console.log("Error, no/too many folders selected.")
+      if notify
+        atom.notifications.addWarning 'Error, no/too many folders selected.', { 'dismissable': true }
