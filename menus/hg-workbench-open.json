@@ -1,6 +1,6 @@
 {
   "context-menu": {
-    "atom-workspace": [
+    ".tree-view": [
       {
         "label": "Open in Hg Workbench",
         "command": "hg-workbench-open:toggle"
