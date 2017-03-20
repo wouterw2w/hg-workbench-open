@@ -23,16 +23,13 @@ module.exports =
 
   opener: ->
     notify = atom.config.get('hg-workbench-open.notify')
-    editor = atom.workspace.getActivePaneItem()
     listTree = document.querySelector('.tree-view')
     selected = listTree.querySelectorAll('.selected > .header > span, .selected > span')
     if selected.length == 1
       pieces = selected[0].dataset.path.split(path.sep)
-      name = pieces[pieces.length - 1].replace(".", "-")
       pieces.splice(pieces.length, 1)
       pathName = pieces.join(path.sep)
-      extname = path.extname(pathName).trim()
-      if extname != ''
+      if path.extname(pathName).trim() != ''
         pieces.splice(pieces.length - 1, 1)
         pathName = pieces.join(path.sep)
       if notify
