@@ -12,7 +12,7 @@
   "activationCommands": {
     "atom-workspace": "hg-workbench-open:toggle"
   },
-  "repository": "https://github.com/PXgamer/hg-workbench-open",
+  "repository": "https://github.com/pxgamer/hg-workbench-open",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
