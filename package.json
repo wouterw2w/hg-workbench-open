@@ -1,6 +1,6 @@
 {
   "name": "hg-workbench-open",
-  "main": "./lib/hg-workbench-open",
+  "main": "./src/hg-workbench-open",
   "version": "0.2.5",
   "description": "Open Mercurial repositories in Hg Workbench.",
   "keywords": [
