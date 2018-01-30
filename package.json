@@ -1,7 +1,7 @@
 {
   "name": "hg-workbench-open",
-  "main": "./lib/hg-workbench-open",
-  "version": "0.2.5",
+  "main": "./src/hg-workbench-open",
+  "version": "1.0.0",
   "description": "Open Mercurial repositories in Hg Workbench.",
   "keywords": [
     "hg",
@@ -12,7 +12,7 @@
   "activationCommands": {
     "atom-workspace": "hg-workbench-open:toggle"
   },
-  "repository": "https://github.com/PXgamer/hg-workbench-open",
+  "repository": "https://github.com/pxgamer/hg-workbench-open",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
