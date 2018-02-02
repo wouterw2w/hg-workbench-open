@@ -1,5 +1,7 @@
 # hg-workbench-open
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pxgamer/hg-workbench-open.svg)](https://greenkeeper.io/)
+
 Open mercurial repositories in TortoiseHg Workbench.
 
 ## Install
