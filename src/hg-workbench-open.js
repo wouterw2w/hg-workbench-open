@@ -18,6 +18,12 @@ export default {
       description: 'Enables notifications for when a file has been opened in Hg Workbench.',
       type: 'boolean',
       'default': 'false'
+    },
+    executable: {
+      title: "Tortoise HG workbench path",
+      description: "The path of the executable",
+      type: "string",
+      default: "/usr/bin/thg"
     }
   },
   activate () {
@@ -34,8 +40,8 @@ export default {
     let notify
     let pathName
     let pieces
-    let selected
-    notify = atom.config.get('hg-workbench-open.notify')
+    let selected = atom.config.get('hg-workbench-open.notify')
+    let executable = atom.config.get("hg-workbench-open.executable")
     listTree = document.querySelector('.tree-view')
     selected = listTree.querySelectorAll(
       '.selected > .header > span, .selected > span')
@@ -52,7 +58,7 @@ export default {
           'dismissable': true
         })
       }
-      return exec(`thgw.exe -R "${pathName}"`)
+      return exec(executable + `-R "${pathName}"`)
     } else {
       if (notify) {
         return atom.notifications.addWarning(
